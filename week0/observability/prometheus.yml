@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Uncomment and point this at your app once it exposes /metrics
+  # (e.g. perf-lab's Express/raw servers via prom-client)
+  # - job_name: "perf-lab"
+  #   static_configs:
+  #     - targets: ["host.docker.internal:3000"]
